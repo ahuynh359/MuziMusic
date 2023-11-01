@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:paddingTop="12dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:background="@drawable/bg_rounded_white"
+        android:padding="6dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgSongAvatar"
+            android:layout_width="@dimen/_50dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/songs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSongName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:maxLines="1"
+            android:textColor="@color/purple_heart"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintStart_toEndOf="@id/imgSongAvatar"
+            app:layout_constraintTop_toTopOf="@id/imgSongAvatar"
+            tools:text="What A Time" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAccountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="1"
+            android:textColor="@color/boulder"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintStart_toStartOf="@id/tvSongName"
+            app:layout_constraintTop_toBottomOf="@id/tvSongName"
+            tools:text="What A Time" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="8dp"
+        android:background="@color/black" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_menu" />
+
+</LinearLayout>

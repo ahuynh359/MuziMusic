@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <group
+        android:pivotX="70"
+        android:pivotY="100"
+        android:scaleX="0.5"
+        android:scaleY="0.5">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M10,33.04C34.58,12.99 90.83,-2.56 100.89,24.42C110.95,51.4 74.02,157.37 59.73,145.6C36.87,126.78 124.55,1.33 134.61,59.86C134.99,76.06 147.19,135.93 125.47,145.6C108.89,145.6 132.67,52.55 168.34,59.86C177.87,63.67 187.77,73.01 183.2,148.46C182.51,159.9 186.06,195.95 250.08,154.79"
+            android:strokeWidth="19.435"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:endX="123.18"
+                    android:endY="163.94"
+                    android:startX="123.18"
+                    android:startY="15.14"
+                    android:type="linear">
+                    <item
+                        android:color="#FFFF2FD1"
+                        android:offset="0" />
+                    <item
+                        android:color="#FFB36FFC"
+                        android:offset="0.55" />
+                    <item
+                        android:color="#FF4DDFFF"
+                        android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+
+</vector>

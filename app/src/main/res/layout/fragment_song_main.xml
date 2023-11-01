@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp"
+
+    >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgSongAvatar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/songs"
+        app:riv_corner_radius="150dp" />
+
+    <TextView
+        android:id="@+id/songDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgSongAvatar"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:text="@string/new_song"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="@dimen/_16dp"
+        android:paddingVertical="@dimen/_8dp">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_comment"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/btn_comment_small" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_headphone"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            android:layout_alignStart="@id/btn_comment"
+            android:layout_marginStart="@dimen/_40dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_headphone" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_playlist"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            android:layout_alignStart="@id/btn_headphone"
+            android:layout_marginStart="@dimen/_40dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_playlist" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_heart"
+            android:layout_width="@dimen/_36dp"
+            android:layout_height="@dimen/_36dp"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_heart" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

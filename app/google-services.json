@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "628269301160",
+    "project_id": "muzi-music-app",
+    "storage_bucket": "muzi-music-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628269301160:android:a8440cece71b7b6bfbf19d",
+        "android_client_info": {
+          "package_name": "com.team15.muzimusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628269301160-3k98846qmuh90ifuruq1e4v2dvbcc8ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBac0ZEVaFqZ6KpEOu8m9eJ9YR7_t1Xpcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628269301160-3k98846qmuh90ifuruq1e4v2dvbcc8ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

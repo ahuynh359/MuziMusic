@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:padding="@dimen/_16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvIndex"
+        android:layout_width="@dimen/_20dp"
+        android:layout_height="@dimen/_20dp"
+        android:fontFamily="@font/roboto_black"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="15" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgSongAvatar"
+        android:layout_width="@dimen/_80dp"
+        android:layout_height="@dimen/_80dp"
+        android:layout_marginStart="@dimen/_20dp"
+        android:src="@drawable/songs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvIndex"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSongName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sp"
+        app:layout_constraintStart_toEndOf="@id/imgSongAvatar"
+        app:layout_constraintTop_toTopOf="@id/imgSongAvatar"
+        tools:text="Paint The Town Red" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAccountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintStart_toStartOf="@id/tvSongName"
+        app:layout_constraintTop_toBottomOf="@id/tvSongName"
+        tools:text="Doja Cat" />
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/songMenuMore"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
+        android:layout_marginEnd="6dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/silver" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:paddingTop="30dp">
+
+    <LinearLayout
+        android:id="@+id/layout_otp"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_1"
+            style="@style/CustomEdittextCode"
+            android:imeOptions="actionNext"
+            tools:text="1" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_2"
+            style="@style/CustomEdittextCode"
+            android:imeOptions="actionNext"
+            tools:text="2" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_3"
+            style="@style/CustomEdittextCode"
+            android:imeOptions="actionNext"
+            tools:text="3" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_4"
+            style="@style/CustomEdittextCode"
+            android:imeOptions="actionNext"
+            tools:text="4" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_5"
+            style="@style/CustomEdittextCode"
+            android:imeOptions="actionNext"
+            tools:text="5" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_6"
+            style="@style/CustomEdittextCode"
+            android:imeOptions="actionNext"
+            tools:text="6" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_dont_have_the_code"
+        style="@style/CustomTextLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18dp"
+        android:text="@string/don_t_have_the_code_resend_otp"
+        app:layout_constraintEnd_toStartOf="@id/tv_resend"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/layout_otp"
+        app:layout_constraintTop_toBottomOf="@id/layout_otp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_resend"
+        style="@style/CustomTextBold"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_0dp"
+        android:textColor="@color/electric_color"
+        android:text="@string/resend_it"
+        app:layout_constraintBottom_toBottomOf="@id/tv_dont_have_the_code"
+        app:layout_constraintEnd_toEndOf="@id/layout_otp"
+        app:layout_constraintStart_toEndOf="@id/tv_dont_have_the_code"
+        app:layout_constraintTop_toTopOf="@id/tv_dont_have_the_code" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_send"
+        style="@style/CustomButton"
+        android:layout_marginHorizontal="@dimen/_35dp"
+        android:layout_marginTop="@dimen/_18dp"
+        android:background="@drawable/btn_long_white"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_resend"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

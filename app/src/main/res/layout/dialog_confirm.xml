@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mine_shaft"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="24dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        style="@style/CustomTextBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Confirm" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        style="@style/CustomTextRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/btn_positive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="Are you sure want to ?" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_negative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:background="@drawable/btn_long_white"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_positive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_positive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_long_purple"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btn_negative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_negative"
+        app:layout_constraintTop_toTopOf="@id/btn_negative" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

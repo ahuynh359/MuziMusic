@@ -1,0 +1,151 @@
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MuziMusic" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <!-- Splash theme style -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.MuziMusic</item>
+    </style>
+
+    <!--Custom Text Black use for title -->
+    <style name="CustomTextBlack">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/roboto_black</item>
+        <item name="android:textSize">@dimen/_30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TitleDiscoverMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+
+    <!--Custom Edittext-->
+    <style name="CustomEdittextLight">
+        <item name="android:layout_marginStart">@dimen/_8dp</item>
+        <item name="android:layout_marginEnd">@dimen/_8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:textColor">@color/silver</item>
+    </style>
+
+    <style name="CustomTextBold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/_15sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--Custom Edittext Code OTP-->
+    <style name="CustomEdittextCode">
+        <item name="android:layout_marginStart">@dimen/_8dp</item>
+        <item name="android:layout_marginEnd">@dimen/_8dp</item>
+        <item name="android:layout_width">@dimen/_40dp</item>
+        <item name="android:layout_height">@dimen/_48dp</item>
+        <item name="android:background">@drawable/bg_edittext_code</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">@dimen/_30sp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!--Custom Text Light -->
+    <style name="CustomTextLight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/roboto_light</item>
+        <item name="android:textSize">@dimen/_15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--Custom Text Medium for Song title -->
+    <style name="CustomTextMedium">
+        <item name="hintTextColor">#373439</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!--Custom Text Regular -->
+    <style name="CustomTextRegular">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/_15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--Custom Text Regular -->
+    <style name="CustomCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/electric_color</item>
+        <item name="colorControlActivated">@color/electric_color</item>
+    </style>
+
+    <!--Custom Button-->
+    <style name="CustomButton">
+        <item name="android:layout_width">@dimen/_0dp</item>
+        <item name="android:layout_height">@dimen/_42dp</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/_17sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="CustomSliderStyle" parent="Widget.MaterialComponents.Slider">
+        <item name="materialThemeOverlay">@style/slider_overlay</item>
+    </style>
+
+    <style name="slider_overlay">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="tooltip" parent="Widget.MaterialComponents.Tooltip">
+        <item name="shapeAppearanceOverlay">@style/tooltipShOverlay</item>
+        <item name="backgroundTint">@color/electric_color</item>
+    </style>
+
+    <style name="tooltipShOverlay">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+
+</resources>
+

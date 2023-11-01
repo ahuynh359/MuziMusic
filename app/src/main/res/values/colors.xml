@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="silver">#D6D6D6</color>
+    <color name="electric_color">#9747FF</color>
+    <color name="mine_shaft">#313131</color>
+    <color name="red">#ff0000</color>
+    <color name="gray">#8C8C8C</color>
+    <color name="alto">#DBDBDB</color>
+    <color name="persian_indigo">#4A1288</color>
+    <color name="white">#FFFFFF</color>
+    <color name="mauve">#E0C3FF</color>
+    <color name="black">#000000</color>
+
+    <color name="ripple">#F49B32</color>
+    <color name="razzle_dazzle_rose">#FF2FD1</color>
+    <color name="dove_gray">#6B6B6B</color>
+    <color name="purple_heart">#6F1ED8</color>
+    <color name="cod_gray">#111111</color>
+    <color name="boulder">#767676</color>
+
+
+</resources>

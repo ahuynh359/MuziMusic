@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:background="@color/black">
+
+    <TextView
+        style="@style/CustomTextMedium"
+        android:text="@string/description" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_des"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:hint="@string/type_description"
+        app:hintTextColor="@color/silver">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:maxLines="3"
+            android:inputType="textMultiLine"
+            android:id="@+id/edt_des"
+            style="@style/CustomEdittextLight"
+            android:background="@drawable/bg_edt_type" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/CustomTextMedium"
+        android:layout_marginTop="@dimen/_21dp"
+        android:text="@string/file_image" />
+
+    <TextView
+        android:id="@+id/btnChooseImage"
+        style="@style/CustomTextMedium"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:background="@drawable/bg_edt_type"
+        android:gravity="center_vertical"
+        android:hint="@string/choose_album"
+        android:paddingHorizontal="@dimen/_16dp"
+        android:textColorHint="#373439"
+        app:drawableEndCompat="@drawable/ic_next">
+
+    </TextView>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgPreview"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/songs"
+        app:riv_corner_radius="12dp" />
+
+</LinearLayout>

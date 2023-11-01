@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cod_gray"
+    android:paddingVertical="@dimen/_35dp"
+    android:paddingHorizontal="@dimen/_20dp"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imv_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sp"
+        android:fontFamily="@font/roboto_bold"
+        tools:text="Good morning"
+        android:id="@+id/tv_hi"
+        app:layout_constraintBottom_toBottomOf="@id/imv_avatar"
+        app:layout_constraintTop_toTopOf="@id/imv_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintBottom_toBottomOf="@id/imv_avatar"
+        app:layout_constraintTop_toTopOf="@id/imv_avatar"
+        android:id="@+id/btn_search"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toStartOf="@id/imv_noti"
+        android:tint="@color/electric_color"
+        app:srcCompat="@drawable/ic_search"
+        android:layout_width="wrap_content"
+        app:tint="@color/white"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imv_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_notification"
+        app:layout_constraintBottom_toBottomOf="@id/imv_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imv_avatar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:visibility="invisible"
+        android:id="@+id/tv_count"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:background="@drawable/badge"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/imv_noti"
+        app:layout_constraintStart_toStartOf="@id/imv_noti"
+        app:layout_constraintTop_toTopOf="@id/imv_noti"
+        tools:text="10" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

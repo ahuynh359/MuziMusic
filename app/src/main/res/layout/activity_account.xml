@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cod_gray"
+    tools:context=".ui.account.AccountActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_account_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_36dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="ahuynh359" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="@dimen/_104dp"
+                    android:layout_height="@dimen/_104dp"
+                    android:layout_marginTop="@dimen/_32dp"
+                    android:src="@drawable/singer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_account_name" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_edit"
+                    android:layout_width="@dimen/_30dp"
+                    android:layout_height="@dimen/_30dp"
+                    android:src="@drawable/ic_edit"
+                    app:layout_constraintBottom_toBottomOf="@id/img_avatar"
+                    app:layout_constraintEnd_toEndOf="@id/img_avatar" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_song"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_total_follower"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_avatar"
+                    tools:text="0" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/songs"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_total_song"
+                    app:layout_constraintStart_toStartOf="@id/tv_total_song"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_song" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_follower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_65dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total_song"
+                    app:layout_constraintEnd_toStartOf="@id/tv_total_following"
+                    app:layout_constraintStart_toEndOf="@id/tv_total_song"
+                    app:layout_constraintTop_toTopOf="@id/tv_total_song"
+                    tools:text="2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/followers"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_total_follower"
+                    app:layout_constraintStart_toStartOf="@id/tv_total_follower"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_follower" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_65dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total_follower"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_total_follower"
+                    app:layout_constraintTop_toTopOf="@id/tv_total_follower"
+                    tools:text="2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/followers"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_total_following"
+                    app:layout_constraintStart_toStartOf="@id/tv_total_following"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_following" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_follow"
+                    style="@style/CustomButton"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_24dp"
+                    android:layout_marginTop="@dimen/_38dp"
+                    android:background="@drawable/btn_black_outline_white"
+                    android:text="@string/follow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_following" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/menu_show_songs"
+                    style="@style/CustomTextBold"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18dp"
+                    android:text="@string/songs"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:layout_constraintStart_toStartOf="@id/btn_follow"
+                    app:layout_constraintTop_toBottomOf="@id/btn_follow" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_song"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/menu_show_songs"
+                    app:layout_constraintTop_toBottomOf="@id/menu_show_songs">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8dp"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/item_song_small_shimmer" />
+                        <include layout="@layout/item_song_small_shimmer" />
+                        <include layout="@layout/item_song_small_shimmer" />
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:orientation="horizontal"
+                    android:id="@+id/recycler_song"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/menu_show_songs"
+                    app:layout_constraintTop_toBottomOf="@id/menu_show_songs"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_song_small" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/menu_show_album"
+                    style="@style/CustomTextBold"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18dp"
+                    android:text="@string/albums"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:layout_constraintStart_toStartOf="@id/btn_follow"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_song" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_album"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/menu_show_songs"
+                    app:layout_constraintTop_toBottomOf="@id/menu_show_album">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/item_song_small_shimmer" />
+
+                        <include layout="@layout/item_song_small_shimmer" />
+
+                        <include layout="@layout/item_song_small_shimmer" />
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:orientation="horizontal"
+                    android:id="@+id/recycler_album"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/menu_show_album"
+                    app:layout_constraintTop_toBottomOf="@id/menu_show_album"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_playlist_small" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/menu_show_playlist"
+                    style="@style/CustomTextBold"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18dp"
+                    android:text="@string/playlist"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:layout_constraintStart_toStartOf="@id/btn_follow"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_album" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_playlist"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/menu_show_songs"
+                    app:layout_constraintTop_toBottomOf="@id/menu_show_playlist">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/item_playlist_small_shimmer" />
+
+                        <include layout="@layout/item_playlist_small_shimmer" />
+
+                        <include layout="@layout/item_playlist_small_shimmer" />
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_playlist"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/menu_show_playlist"
+                    app:layout_constraintTop_toBottomOf="@id/menu_show_playlist"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_playlist_small" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35dp"
+        android:layout_marginEnd="@dimen/_24dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

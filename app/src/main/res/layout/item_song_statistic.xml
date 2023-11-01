@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:padding="@dimen/_8dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_index"
+        style="@style/CustomTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="4" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_song_avatar"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
+        android:layout_marginStart="@dimen/_15dp"
+        android:src="@drawable/songs"
+        app:layout_constraintBottom_toBottomOf="@id/tv_index"
+        app:layout_constraintStart_toEndOf="@id/tv_index"
+        app:layout_constraintTop_toTopOf="@id/tv_index" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_song_name"
+        style="@style/CustomTextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@id/imv_song_avatar"
+        app:layout_constraintTop_toTopOf="@id/imv_song_avatar"
+        tools:text="Lose you to love me" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_song_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_song_name"
+        tools:text="Selena Gomez" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@id/btn_headphone"
+        app:layout_constraintTop_toTopOf="@id/imv_song_avatar"
+        app:srcCompat="@drawable/ic_heart" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_total_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintEnd_toEndOf="@id/btn_heart"
+        app:layout_constraintStart_toStartOf="@id/btn_heart"
+        app:layout_constraintTop_toBottomOf="@id/btn_heart"
+        tools:text="15" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_marginEnd="@dimen/_10dp"
+        android:id="@+id/btn_headphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imv_song_avatar"
+        app:srcCompat="@drawable/ic_headphone" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_total_listen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_regular"
+        android:maxLines="1"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintEnd_toEndOf="@id/btn_headphone"
+        app:layout_constraintStart_toStartOf="@id/btn_headphone"
+        app:layout_constraintTop_toBottomOf="@id/btn_headphone"
+        tools:text="999,9K" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

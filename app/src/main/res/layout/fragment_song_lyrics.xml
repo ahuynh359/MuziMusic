@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/_6dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerLyrics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="30"
+        tools:listitem="@layout/item_lyric" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLyricsTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10dp"
+        android:textColor="@color/razzle_dazzle_rose"
+        android:textSize="@dimen/_22sp"
+        android:visibility="gone"
+        tools:text="This line" />
+
+</RelativeLayout>

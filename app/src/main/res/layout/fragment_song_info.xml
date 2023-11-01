@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gardient">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_heart"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="3dp">
+
+                <TextView
+                    style="@style/CustomTextRegular"
+                    android:text="Song : " />
+
+                <TextView
+                    android:id="@+id/tvSongName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kiếp tương tư"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="3dp">
+
+                <TextView
+                    style="@style/CustomTextRegular"
+                    android:text="Singer :" />
+
+                <TextView
+                    android:id="@+id/tvSingerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phát Huy T4"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="3dp">
+
+                <TextView
+                    style="@style/CustomTextRegular"
+                    android:text="Album : " />
+
+                <TextView
+                    android:id="@+id/tvAlbumName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tương tư (Single)"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="3dp">
+
+                <TextView
+                    style="@style/CustomTextRegular"
+                    android:text="Type : " />
+
+                <TextView
+                    android:id="@+id/tvType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhạc Trẻ, V-POP"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_hearted"
+                app:tint="@color/electric_color" />
+
+            <TextView
+                android:id="@+id/tvLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:text="45"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_headphone"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvListens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="1,5K"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginStart="@dimen/_16dp"
+        style="@style/CustomTextRegular"
+        android:layout_marginTop="16dp"
+        android:text="Gợi ý"
+        app:drawableEndCompat="@drawable/ic_next" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_marginStart="@dimen/_16dp"
+        android:id="@+id/shimmerSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/item_song_small_shimmer" />
+
+            <include layout="@layout/item_song_small_shimmer" />
+
+            <include layout="@layout/item_song_small_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_song_small" />
+
+</LinearLayout>

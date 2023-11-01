@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.login.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_82dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        style="@style/CustomTextBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_21dp"
+        android:text="@string/join_muzi"
+        app:layout_constraintEnd_toEndOf="@id/imv_icon"
+        app:layout_constraintStart_toStartOf="@id/imv_icon"
+        app:layout_constraintTop_toBottomOf="@id/imv_icon" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_36dp"
+        android:layout_marginTop="@dimen/_40dp"
+        android:hint="@string/email"
+        app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+        app:boxCornerRadiusBottomStart="@dimen/_10dp"
+        app:boxCornerRadiusTopEnd="@dimen/_10dp"
+        app:boxCornerRadiusTopStart="@dimen/_10dp"
+        app:hintTextColor="@color/silver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+            style="@style/CustomEdittextLight"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40dp"
+        android:hint="@string/password"
+        app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+        app:boxCornerRadiusBottomStart="@dimen/_10dp"
+        app:boxCornerRadiusTopEnd="@dimen/_10dp"
+        app:boxCornerRadiusTopStart="@dimen/_10dp"
+        app:hintTextColor="@color/silver"
+        app:layout_constraintEnd_toEndOf="@id/til_email"
+        app:layout_constraintStart_toStartOf="@id/til_email"
+        app:layout_constraintTop_toBottomOf="@id/til_email"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/silver">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            style="@style/CustomEdittextLight"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_forgot_password"
+        style="@style/CustomTextRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_0dp"
+        android:layout_marginTop="@dimen/_15dp"
+        android:layout_marginEnd="@dimen/_15dp"
+        android:text="@string/forgot_password"
+        android:textColor="@color/electric_color"
+        app:layout_constraintEnd_toEndOf="@id/til_password"
+        app:layout_constraintTop_toBottomOf="@id/til_password" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_log_in"
+        style="@style/CustomButton"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_54dp"
+        android:background="@drawable/btn_long_purple"
+        android:text="@string/log_in"
+        app:layout_constraintEnd_toEndOf="@id/til_password"
+        app:layout_constraintStart_toStartOf="@id/til_password"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_dont_have_account"
+        style="@style/CustomTextLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15dp"
+        android:text="@string/don_t_have_account"
+        app:layout_constraintEnd_toStartOf="@id/tv_sign_up"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/btn_log_in"
+        app:layout_constraintTop_toBottomOf="@id/btn_log_in" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_sign_up"
+        style="@style/CustomTextBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textColor="@color/electric_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_dont_have_account"
+        app:layout_constraintEnd_toEndOf="@id/btn_log_in"
+        app:layout_constraintStart_toEndOf="@id/tv_dont_have_account"
+        app:layout_constraintTop_toTopOf="@id/tv_dont_have_account" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btn_log_in"
+        app:layout_constraintEnd_toEndOf="@id/btn_log_in"
+        app:layout_constraintTop_toTopOf="@id/btn_log_in" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

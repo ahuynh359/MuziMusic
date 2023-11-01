@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Included by activity_player.xml-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_25dp"
+    android:paddingTop="@dimen/_60dp">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+
+        android:id="@+id/btn_down"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_down" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_24sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_singer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_down"
+        tools:text="What a time" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_singer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/alto"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="Julia Michaels, Niall Horan" />
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_more"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_more" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

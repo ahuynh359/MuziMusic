@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.signup.SignupActivity">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_41dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_navigate_back" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_create_new_account"
+        style="@style/CustomTextBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_21dp"
+        android:text="@string/create_new_account"
+        app:layout_constraintEnd_toEndOf="@id/imv_icon"
+        app:layout_constraintStart_toStartOf="@id/imv_icon"
+        app:layout_constraintTop_toBottomOf="@id/imv_icon" />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/til_email"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_36dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:hint="@string/email"
+        app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+        app:boxCornerRadiusBottomStart="@dimen/_10dp"
+        app:boxCornerRadiusTopEnd="@dimen/_10dp"
+        app:boxCornerRadiusTopStart="@dimen/_10dp"
+        app:hintTextColor="@color/silver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_create_new_account">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/edt_email"
+            style="@style/CustomEdittextLight"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_email_error"
+        style="@style/CustomTextLight"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_2dp"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/til_email"
+        app:layout_constraintTop_toBottomOf="@id/til_email"
+        tools:text="Error" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_user"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30dp"
+        android:hint="@string/user"
+        app:hintTextColor="@color/silver"
+        app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+        app:boxCornerRadiusBottomStart="@dimen/_10dp"
+        app:boxCornerRadiusTopEnd="@dimen/_10dp"
+        app:boxCornerRadiusTopStart="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="@id/til_email"
+        app:layout_constraintStart_toStartOf="@id/til_email"
+        app:layout_constraintTop_toBottomOf="@id/til_email"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_user"
+            style="@style/CustomEdittextLight"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_user_error"
+        style="@style/CustomTextLight"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_2dp"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/til_user"
+        app:layout_constraintTop_toBottomOf="@id/til_user"
+        tools:text="Error" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:hintTextColor="@color/silver"
+        android:id="@+id/til_password"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30dp"
+        android:hint="@string/password"
+        app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+        app:boxCornerRadiusBottomStart="@dimen/_10dp"
+        app:boxCornerRadiusTopEnd="@dimen/_10dp"
+        app:boxCornerRadiusTopStart="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="@id/til_email"
+        app:layout_constraintStart_toStartOf="@id/til_email"
+        app:layout_constraintTop_toBottomOf="@id/til_user"
+        app:passwordToggleTint="@color/silver"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            style="@style/CustomEdittextLight"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_password_error"
+        style="@style/CustomTextLight"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_2dp"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/til_password"
+        app:layout_constraintTop_toBottomOf="@id/til_password"
+        tools:text="Error" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:hintTextColor="@color/silver"
+        android:id="@+id/til_confirm_password"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30dp"
+        android:hint="@string/confirm_password"
+        app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+        app:boxCornerRadiusBottomStart="@dimen/_10dp"
+        app:boxCornerRadiusTopEnd="@dimen/_10dp"
+        app:boxCornerRadiusTopStart="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="@id/til_password"
+        app:layout_constraintStart_toStartOf="@id/til_password"
+        app:layout_constraintTop_toBottomOf="@id/til_password"
+        app:passwordToggleTint="@color/silver"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_confirm_password"
+            style="@style/CustomEdittextLight"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_confirm_password_error"
+        style="@style/CustomTextLight"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_2dp"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/til_confirm_password"
+        app:layout_constraintTop_toBottomOf="@id/til_confirm_password"
+        tools:text="Error" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_up"
+        style="@style/CustomButton"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35dp"
+        android:background="@drawable/btn_long_purple"
+        android:paddingHorizontal="@dimen/_35dp"
+        android:text="@string/sign_up"
+        app:layout_constraintEnd_toEndOf="@id/til_confirm_password"
+        app:layout_constraintStart_toStartOf="@id/til_confirm_password"
+        app:layout_constraintTop_toBottomOf="@id/til_confirm_password" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_have_account"
+        style="@style/CustomTextLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35dp"
+        android:text="@string/already_have_an_account_log_in"
+        app:layout_constraintEnd_toStartOf="@id/tv_login"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/btn_sign_up"
+        app:layout_constraintTop_toBottomOf="@id/btn_sign_up" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_login"
+        style="@style/CustomTextBold"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_0dp"
+        android:text="@string/log_in"
+        android:textColor="@color/electric_color"
+        app:layout_constraintBottom_toBottomOf="@id/tv_have_account"
+        app:layout_constraintEnd_toEndOf="@id/btn_sign_up"
+        app:layout_constraintStart_toEndOf="@id/tv_have_account"
+        app:layout_constraintTop_toTopOf="@id/tv_have_account" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
