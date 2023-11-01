@@ -9,7 +9,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="3dp"
-    android:background="@color/black">
+    >
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -23,10 +23,10 @@
             app:riv_corner_radius="12dp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_20dp"
+            android:layout_height="@dimen/_20dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_play" />
+            android:src="@drawable/ic_play_music" />
     </RelativeLayout>
 
 
@@ -37,13 +37,15 @@
         android:layout_marginTop="3dp"
         android:ellipsize="end"
         android:gravity="center"
+        android:fontFamily="@font/roboto_bold"
         android:maxLines="2"
         android:text="Một đêm say (single)"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
+        android:fontFamily="@font/roboto_regular"
         android:id="@+id/tvSinger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +53,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:text="Phát Huy T4"
-        android:textColor="@color/gray"
-        android:textSize="13sp" />
+        android:textColor="#8C8C8C"
+        android:textSize="12sp" />
 
 </LinearLayout>

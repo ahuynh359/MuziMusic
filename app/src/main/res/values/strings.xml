@@ -90,6 +90,8 @@
     <string name="choose_file_song">Choose file song</string>
     <string name="choose_album">Choose album</string>
     <string name="file_image">File Image</string>
+    <string name="change_password">Change Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
 
 
 </resources>

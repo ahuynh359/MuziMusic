@@ -38,7 +38,7 @@ class ChangePasswordFragment : DialogFragment() {
     ): View {
         binding = FragmentChangePasswordBinding.inflate(inflater, container, false)
 
-        //setupPasswordText()
+
         textWatchers()
         observers()
 
@@ -72,8 +72,8 @@ class ChangePasswordFragment : DialogFragment() {
     private fun getModal(): ChangePasswordModal? {
         if (isCurPassValid && isNewPassValid && isConfirmPassValid) {
             return ChangePasswordModal(
-                binding.edtPassword.text.toString().trim(),
-                binding.edtConfirmPassword.text.toString().trim()
+                binding.edtCurrentPassword.text.toString().trim(),
+                binding.edtNewPassword.text.toString().trim()
             )
         }
         return null
@@ -86,13 +86,13 @@ class ChangePasswordFragment : DialogFragment() {
     }
 
     private fun validateCurPass() {
-        binding.edtPassword.addTextChangedListener {
+        binding.edtCurrentPassword.addTextChangedListener {
             it?.let {
                 binding.tvPasswordError.apply {
                     isCurPassValid = false
                     when {
                         it.isEmpty() -> {
-                            text = "Mật khẩu hiện tại không được bỏ trống!"
+                            text = "Current Password do not leave empty"
                             visibility = View.VISIBLE
                         }
                         else -> {
@@ -106,13 +106,13 @@ class ChangePasswordFragment : DialogFragment() {
     }
 
     private fun validateNewPass() {
-        binding.edtConfirmPassword.addTextChangedListener {
+        binding.edtNewPassword.addTextChangedListener {
             it?.let {
-                binding.tvConfirmPasswordError.apply {
+                binding.tvNewPasswordError.apply {
                     isNewPassValid = false
                     when {
                         it.toString().trim().length < 6 -> {
-                            text = "Mật khẩu mới phái có ít nhất 6 kí tự!"
+                            text = "At least 6 character"
                             visibility = View.VISIBLE
                         }
                         else -> {
@@ -132,11 +132,11 @@ class ChangePasswordFragment : DialogFragment() {
                     isConfirmPassValid = false
                     when {
                         it.toString().isEmpty() -> {
-                            text = "Mật khẩu xác nhận không được bỏ trống!"
+                            text = "Do not leave empty"
                             visibility = View.VISIBLE
                         }
-                        it.toString() != binding.edtConfirmPassword.text?.trim().toString() -> {
-                            text = "Mật khẩu xác nhận không khớp!"
+                        it.toString() != binding.edtNewPassword.text?.trim().toString() -> {
+                            text = "Do not macth with new password"
                             visibility = View.VISIBLE
                         }
                         else -> {
@@ -149,16 +149,8 @@ class ChangePasswordFragment : DialogFragment() {
         }
     }
 
-    /*private fun setupPasswordText() {
-        binding.btnCurPassVisible.setOnClickListener {
-            showHidePassword(binding.edCurrentPass, binding.btnCurPassVisible)
-        }
-        binding.btnNewPassVisible.setOnClickListener {
-            showHidePassword(binding.edNewPass, binding.btnNewPassVisible)
-        }
-        binding.btnConfirmPassVisible.setOnClickListener {
-            showHidePassword(binding.edConfirmPass, binding.btnConfirmPassVisible)
-        }
-    }*/
+
+
+
 
 }

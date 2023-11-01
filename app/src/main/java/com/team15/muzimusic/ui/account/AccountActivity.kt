@@ -54,15 +54,20 @@ class AccountActivity : BaseActivity(), SongClickListener, PlaylistClickListener
         setContentView(binding.root)
 
         binding.btnLogOut.setOnClickListener {
-            Helper.sendMusicAction(this,MusicService.ACTION_CLEAR)
+            Helper.sendMusicAction(this, MusicService.ACTION_CLEAR)
 
             viewModel.logout()
-            Intent(this,LoginActivity::class.java).apply {
+            Intent(this, LoginActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }.also { startActivity(it) }
             finish()
         }
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
 
 
 
@@ -124,6 +129,14 @@ class AccountActivity : BaseActivity(), SongClickListener, PlaylistClickListener
             fetchData()
         }
 
+        binding.btnChangePassword.setOnClickListener {
+            ChangePasswordFragment().apply {
+                arguments = Bundle().apply {
+                    putParcelable(Constants.Account, viewModel.account.value)
+                }
+            }.show(supportFragmentManager, null)
+        }
+
 
         binding.btnEdit.setOnClickListener {
             ChangeProfileFragment().apply {
@@ -172,7 +185,7 @@ class AccountActivity : BaseActivity(), SongClickListener, PlaylistClickListener
             binding.tvAccountName.setTextColor(ContextCompat.getColor(this, R.color.white))
         }
 
-        if(account.role == 1){
+        if (account.role == 1) {
             binding.tvAccountName.setTextColor(ContextCompat.getColor(this, R.color.red))
         }
 
@@ -200,13 +213,13 @@ class AccountActivity : BaseActivity(), SongClickListener, PlaylistClickListener
 
             btnFollow.text = if (account.followStatus) "Followed" else "Follow"
 
-           /* btnLockAccount.setOnClickListener {
-                if (account.accountStatus == 0) {
-                    viewModel.lockAccount(account)
-                } else {
-                    viewModel.unlockAccount(account)
-                }
-            }*/
+            /* btnLockAccount.setOnClickListener {
+                 if (account.accountStatus == 0) {
+                     viewModel.lockAccount(account)
+                 } else {
+                     viewModel.unlockAccount(account)
+                 }
+             }*/
         }
     }
 
