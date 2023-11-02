@@ -52,8 +52,10 @@ class SearchActivity : BaseActivity() {
                 val keyword = binding.editText.text.toString().trim()
                 if (keyword.isNotEmpty()) {
                     viewModel.search(keyword)
-                    viewModel.searchLabel(keyword,2)
+                    viewModel.searchLabel(keyword,1)
                     viewModel.saveSearchKeyword(keyword)
+                    viewModel.getSongsOfType()
+
                 }
                 binding.editText.hideKeyboard()
                 return@OnEditorActionListener true

@@ -19,7 +19,10 @@ class AlbumRepository @Inject constructor(
 ) {
 
     suspend fun addAlbum(modal: AlbumModal): NetworkResult<MessageJson> = withContext(dispatcher) {
-        remoteService.addAlbum(modal)
+        withContext(dispatcher){
+            remoteService.addAlbum(modal)
+        }
+
     }
 
     suspend fun updateAlbum(idAlbum: Int, modal: AlbumModal): NetworkResult<MessageJson> =

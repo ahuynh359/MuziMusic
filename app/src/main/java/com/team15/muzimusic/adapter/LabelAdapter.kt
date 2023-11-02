@@ -14,7 +14,7 @@ import com.team15.muzimusic.data.models.singersToString
 import com.team15.muzimusic.databinding.ItemLabelBinding
 
 class LabelAdapter(
-    /* private val listener: SongClickListener,*/
+     private val listener: SongClickListener,
 ) : RecyclerView.Adapter<LabelAdapter.SongViewHolder>() {
 
 
