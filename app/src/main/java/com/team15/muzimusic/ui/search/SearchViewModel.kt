@@ -16,6 +16,8 @@ import com.team15.muzimusic.data.repositories.LabelRepository
 import com.team15.muzimusic.data.repositories.SearchHistoryRepository
 import com.team15.muzimusic.data.repositories.SongRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import java.util.Date
 import javax.inject.Inject
@@ -55,7 +57,7 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    fun search(keyword: String) {
+  /*  fun search(keyword: String) {
         isLoading.postValue(true)
         parentJob = viewModelScope.launch {
             val result = songRepository.search(keyword)
@@ -85,6 +87,63 @@ class SearchViewModel @Inject constructor(
         }
         isSearchDone.postValue(true)
         registerEventParentJobFinish()
+    }*/
+
+    fun search(keyword: String) {
+        isLoading.postValue(true)
+        parentJob = viewModelScope.launch(Dispatchers.IO) {
+            val result = async { songRepository.search(keyword) }
+            val result2 = async { labelRepository.searchLabel(keyword, 1) }
+
+            result.await()?.let {
+                songs.postValue(it.songs.toListSong())
+                playlists.postValue(it.playlists.toListPlaylist())
+                accounts.postValue(it.accounts.toListAccount())
+                isSearchDone.postValue(true)
+                registerEventParentJobFinish()
+            }
+            result2.await()?.let {
+                labels.postValue(it.toLabel())
+                val num = when (it.result[0].label) {
+                    "sadness" -> 1
+                    "love" -> 2
+                    "suprise" -> 3
+                    "joy" -> 4
+                    else -> 6
+                }
+                val list = songRepository.getSongsOfType(num, 1)
+
+                songType.postValue(list)
+            }
+        }
+//        parentJob = viewModelScope.launch(Dispatchers.IO) {
+//            val result = songRepository.search(keyword)
+//            result?.let {
+//                songs.postValue(it.songs.toListSong())
+//                playlists.postValue(it.playlists.toListPlaylist())
+//                accounts.postValue(it.accounts.toListAccount())
+//
+//            }
+//
+//            val result2 = labelRepository.searchLabel(keyword, 1)
+//            result2?.let {
+//                labels.postValue(it.toLabel())
+//
+//            }
+//            val labelToMatch = result2?.result?.get(0)?.label ?: ""
+//            val num = when (labelToMatch) {
+//                "sadness" -> 1
+//                "love" -> 2
+//                "suprise" -> 3
+//                "joy" -> 4
+//                else -> 6
+//            }
+//            val list = songRepository.getSongsOfType(num, 1)
+//
+//            songType.postValue(list)
+//        }
+//        isSearchDone.postValue(true)
+//        registerEventParentJobFinish()
     }
 
 

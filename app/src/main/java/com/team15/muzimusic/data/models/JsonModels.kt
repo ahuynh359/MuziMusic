@@ -1,7 +1,6 @@
 package com.team15.muzimusic.data.models
 
 import com.squareup.moshi.Json
-import com.team15.muzimusic.data.database.entities.AlbumEntity
 
 data class LoginModal(val email: String, val password: String)
 
@@ -200,7 +199,7 @@ data class SongJson(
         return Song(
             idSong = this.idSong,
             name = this.nameSong,
-            link = this.link ?: "",
+            link = getLinkMedia() ?: "",
             image = this.imageSong ?: "",
             lyrics = this.lyrics ?: "",
             description = this.description ?: "",
@@ -214,6 +213,15 @@ data class SongJson(
             loveStatus = this.loveStatus,
             like = this.totalLove.toInt(),
         )
+    }
+
+    fun getLinkMedia(): String? {
+        val id = this.link?.split("id=")
+        if (id != null) {
+            return "https://drive.google.com/open?id=${id.get(1)}"
+        } else
+            return null
+
     }
 }
 
