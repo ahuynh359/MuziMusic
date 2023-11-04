@@ -46,7 +46,7 @@ class LibraryFragment : Fragment(), MenuClickListener {
         if (DataLocal.myAccount.role == 1) {
             menus.add(MenuIndividual("Manage Type", R.drawable.ic_playlist, MANAGE_TYPE))
             menus.add(MenuIndividual("Manage Lock Account", R.drawable.ic_playlist, MANAGE_LOCK_ACCOUNT))
-            menus.add(MenuIndividual("Statistic", R.drawable.ic_playlist, STATISTIC))
+
         }
     }
 
