@@ -53,13 +53,8 @@ class SearchActivity : BaseActivity() {
                 val keyword = binding.editText.text.toString().trim()
                 if (keyword.isNotEmpty()) {
                     viewModel.search(keyword)
-                    viewModel.searchLabel(keyword,1)
                     viewModel.saveSearchKeyword(keyword)
-                    //Get All Type
-                    viewModel.getTypes()
-                    Log.i("ABCAllTypeType",viewModel._allType.value.toString())
-                    viewModel.getSingleTypeOfSingleLable()
-                    viewModel.getSongsOfType()
+
 
                 }
                 binding.editText.hideKeyboard()

@@ -2,35 +2,19 @@ package com.team15.muzimusic.ui.search
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.beust.klaxon.token.VALUE_TYPE.value
-import com.team15.muzimusic.R
-import com.team15.muzimusic.adapter.LabelAdapter
-import com.team15.muzimusic.adapter.PlaylistAdapter
-import com.team15.muzimusic.adapter.PlaylistClickListener
-import com.team15.muzimusic.adapter.SongAdapter
 import com.team15.muzimusic.adapter.SongClickListener
 import com.team15.muzimusic.adapter.SongLiteAdapter
 import com.team15.muzimusic.common.Constants
 import com.team15.muzimusic.common.Helper
-import com.team15.muzimusic.data.models.Album
-import com.team15.muzimusic.data.models.AlbumJson
-import com.team15.muzimusic.data.models.Label
-import com.team15.muzimusic.data.models.Playlist
 import com.team15.muzimusic.data.models.Song
-import com.team15.muzimusic.data.models.Type
 import com.team15.muzimusic.databinding.FragmentLabelSearchBinding
-import com.team15.muzimusic.databinding.FragmentPlaylistSearchBinding
-import com.team15.muzimusic.databinding.FragmentSongSearchBinding
 import com.team15.muzimusic.service.MusicService
-import com.team15.muzimusic.ui.account.playlist_detail.PlaylistDetailFragment
 import com.team15.muzimusic.ui.menubottom.MenuBottomFragment
 import com.team15.muzimusic.ui.player.PlayerActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -49,13 +33,25 @@ class LabelSearchFragment : Fragment(), SongClickListener {
     ): View {
         binding = FragmentLabelSearchBinding.inflate(inflater, container, false)
 
+        viewModel.labels.observe(viewLifecycleOwner) {
+            if (it == null) {
+                binding.tvLabel.text = "Ko có label trong db"
+            } else {
+                binding.tvLabel.text = it.result[0].label
+            }
+
+
+
+
+
+
+        }
+
         songAdapter = SongLiteAdapter(this)
         binding.recyclerView.apply {
             adapter = songAdapter
             layoutManager = LinearLayoutManager(context)
         }
-
-
 
         viewModel.songType.observe(viewLifecycleOwner) {
             if (it == null) {

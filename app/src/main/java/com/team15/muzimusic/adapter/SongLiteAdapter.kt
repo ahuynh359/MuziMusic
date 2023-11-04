@@ -49,8 +49,11 @@ class SongLiteAdapter(
 
         holder.itemBinding.apply {
             if (song.image.isNotEmpty()) {
-                Picasso.get().load(song.image).fit().into(imgSongAvatar)
+                val id = song.image.split("id=")
+                Picasso.get().load(
+                        "https://drive.google.com/thumbnail?id=${id.get(1)}").fit().into(imgSongAvatar)
             } else {
+
                 Picasso.get().load(R.drawable.songs).fit().into(imgSongAvatar)
             }
             tvSongName.text = song.name
