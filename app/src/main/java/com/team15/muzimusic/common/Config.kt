@@ -8,7 +8,7 @@ object Config {
 
     const val MainSite = "http://13.215.189.243:8000/"
 
-    const val AIMainSite = "http://10.0.2.2:8000/"
+    const val AIMainSite = "http://8.tcp.ngrok.io:16242/"
  
     const val ApiVersion = "/api/v1"
 

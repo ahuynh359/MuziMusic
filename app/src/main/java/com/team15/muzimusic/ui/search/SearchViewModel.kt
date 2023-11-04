@@ -41,27 +41,27 @@ class SearchViewModel @Inject constructor(
     val allType: List<Type>? = _allType.value
 
 
-    private fun getSingleTypeOfSingleLable() {
-        getAllType()
-        if (allType != null) {
-            val labelToMatch = labels.value?.result?.get(0)?.label ?: ""
-            labelType.value = allType.find { it.name == labelToMatch }
-
+     fun getSingleTypeOfSingleLable() {
+        if (_allType.value != null) {
+            val labelToMatch = labels.value?.result?.get(0)?.label ?: "joy"
+            Log.i("ABCLabel",labelToMatch)
+            labelType.value = _allType.value!!.find { it.name == labelToMatch }
+            Log.i("ABCLabelTypeId",labelType.value?.idType.toString())
+        } else{
+            Log.i("ABC All Type Null","Null")
         }
 
     }
 
 
-    private fun getAllType() {
-        isLoading.postValue(true)
-        parentJob = viewModelScope.launch {
-            val result = songRepository.getAllTypes()
-            result.let {
-                _allType.postValue(it)
-            }
+     fun getTypes() {
+         isLoading.postValue(true)
+        viewModelScope.launch {
+            _allType.postValue(songRepository.getAllTypes())
         }
-        isSearchDone.postValue(true)
-        registerEventParentJobFinish()
+         isSearchDone.postValue(true)
+         registerEventParentJobFinish()
+
     }
 
     fun searchLabel(sentence: String, max: Int) {
@@ -104,14 +104,15 @@ class SearchViewModel @Inject constructor(
     }
 
     fun getSongsOfType() {
-
         isLoading.postValue(true)
-        getSingleTypeOfSingleLable()
         parentJob = viewModelScope.launch {
             songType.postValue(labelType.value?.idType?.let { songRepository.getSongsOfType(it, 1) })
 
         }
+        isSearchDone.postValue(true)
         registerEventParentJobFinish()
+        Log.i("ABC REs",songType.value.toString())
+
 
     }
 

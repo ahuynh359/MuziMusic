@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.os.SystemClock
 import android.text.Selection.setSelection
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -54,6 +55,10 @@ class SearchActivity : BaseActivity() {
                     viewModel.search(keyword)
                     viewModel.searchLabel(keyword,1)
                     viewModel.saveSearchKeyword(keyword)
+                    //Get All Type
+                    viewModel.getTypes()
+                    Log.i("ABCAllTypeType",viewModel._allType.value.toString())
+                    viewModel.getSingleTypeOfSingleLable()
                     viewModel.getSongsOfType()
 
                 }
