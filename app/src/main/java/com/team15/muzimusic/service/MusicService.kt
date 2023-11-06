@@ -415,7 +415,7 @@ class MusicService : Service() {
                         .setSmallIcon(R.drawable.ic_headphone)
                         .setContentIntent(resultPendingIntent)
                         .addAction(
-                            R.drawable.ic_next,
+                            R.drawable.ic_nav_pre,
                             "Prev",
                             getPendingIntent(this@MusicService, ACTION_PREV)
                         )
@@ -425,7 +425,7 @@ class MusicService : Service() {
                             getPendingIntent(this@MusicService, ACTION_PLAY)
                         )
                         .addAction(
-                            R.drawable.ic_next,
+                            R.drawable.ic_nav_next,
                             "Next",
                             getPendingIntent(this@MusicService, ACTION_NEXT)
                         )

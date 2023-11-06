@@ -55,14 +55,13 @@ class PlayerActivity : BaseActivity() {
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND, sticky = true)
     fun onAudioSessionIdEvent(event: AudioSessionIdEvent) {
-        Log.d("vinh", "audio session id: ${event.sessionId}")
         viewModel.audioSessionId.postValue(event.sessionId)
     }
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND, sticky = true)
     fun onSongInfo(event: SongInfoEvent) {
         event.song?.let { song ->
-            Log.d("vinh", "recieve song: ${song.name}")
+
             viewModel.song.postValue(song)
 
             binding.toolbar.apply {
@@ -110,7 +109,7 @@ class PlayerActivity : BaseActivity() {
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND, sticky = true)
     fun onMusicPlaying(event: MusicPlayingEvent) {
-        Log.d("vinh", "receive isPlaying: ${event.isPlaying}")
+
         viewModel.isPlaying.postValue(event.isPlaying)
     }
 
@@ -170,7 +169,7 @@ class PlayerActivity : BaseActivity() {
                     )
                 )
             } else {
-                binding.btnShuffle.setColorFilter(ContextCompat.getColor(this, R.color.white))
+                binding.btnShuffle.setColorFilter(ContextCompat.getColor(this, R.color.electric_color))
 
             }
         }

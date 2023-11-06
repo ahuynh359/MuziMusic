@@ -8,7 +8,6 @@ import com.team15.muzimusic.service.MusicService
 
 class MusicBroadcast : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        Log.d("VINHMUSIC", "onReceive")
 
         val actionMusic = intent.getIntExtra(MusicService.INTENT_ACTION, -1)
         val intentService = Intent(context, MusicService::class.java)

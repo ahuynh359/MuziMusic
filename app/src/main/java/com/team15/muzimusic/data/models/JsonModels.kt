@@ -199,7 +199,7 @@ data class SongJson(
         return Song(
             idSong = this.idSong,
             name = this.nameSong,
-            link = getLinkMedia() ?: "",
+            link = this.link ?: "",
             image = this.imageSong ?: "",
             lyrics = this.lyrics ?: "",
             description = this.description ?: "",
@@ -215,14 +215,7 @@ data class SongJson(
         )
     }
 
-    fun getLinkMedia(): String? {
-        val id = this.link?.split("id=")
-        if (id != null) {
-            return "https://drive.google.com/open?id=${id.get(1)}"
-        } else
-            return null
 
-    }
 }
 
 

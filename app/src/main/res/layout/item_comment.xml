@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_toEndOf="@id/cardViewCmtAvatar"
-        android:background="@drawable/btn_long_white"
+        android:background="@drawable/btn_black_outline_white"
         android:paddingHorizontal="12dp"
         android:paddingVertical="8dp">
 

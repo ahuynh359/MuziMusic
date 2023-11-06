@@ -99,8 +99,7 @@ class SearchViewModel @Inject constructor(
                 songs.postValue(it.songs.toListSong())
                 playlists.postValue(it.playlists.toListPlaylist())
                 accounts.postValue(it.accounts.toListAccount())
-                isSearchDone.postValue(true)
-                registerEventParentJobFinish()
+
             }
             result2.await()?.let {
                 labels.postValue(it.toLabel())
@@ -109,12 +108,16 @@ class SearchViewModel @Inject constructor(
                     "love" -> 2
                     "suprise" -> 3
                     "joy" -> 4
-                    else -> 6
+                    "fear" -> 6
+                    else -> 7
                 }
                 val list = songRepository.getSongsOfType(num, 1)
 
                 songType.postValue(list)
+
             }
+            isSearchDone.postValue(true)
+            registerEventParentJobFinish()
         }
 //        parentJob = viewModelScope.launch(Dispatchers.IO) {
 //            val result = songRepository.search(keyword)
