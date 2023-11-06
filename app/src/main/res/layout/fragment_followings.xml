@@ -22,7 +22,7 @@
             android:drawablePadding="4dp"
             android:gravity="center_vertical"
             android:padding="4dp"
-            android:text="Đang theo dõi"
+            android:text="Following"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
         android:layout_below="@id/layoutTop"
         android:layout_margin="12dp"
         android:gravity="center"
-        android:text="Bạn chưa theo dõi tài khoản nào"
+        android:text="No Following"
         android:textColor="@color/gray"
         android:textSize="14sp"
         android:visibility="gone" />

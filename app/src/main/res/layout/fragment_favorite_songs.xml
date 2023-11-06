@@ -23,20 +23,20 @@
             android:drawablePadding="4dp"
             android:gravity="center_vertical"
             android:padding="4dp"
-            android:text="Bài hát yêu thích"
+            android:text="@string/love_songs"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btnPlayMusic"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_hearted" />
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_play_circle" />
 
     </RelativeLayout>
 
@@ -67,7 +67,7 @@
         android:layout_below="@id/layoutTop"
         android:layout_margin="12dp"
         android:gravity="center"
-        android:text="Bạn chưa yêu thích bài hát nào"
+        android:text="@string/don_t_have_any_love_songs"
         android:textColor="@color/gray"
         android:textSize="14sp"
         android:visibility="gone" />

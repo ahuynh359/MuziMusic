@@ -56,10 +56,8 @@ class PlaylistDetailFragment : BaseDialogFragment(), SongClickListener,
 
         setInfoPlaylist()
 
-        songAdapter = SongLiteAdapter(this, this)
-        if (Helper.isMyAccount(playlist.account)) {
-            songAdapter.showRemoveSongFromPlaylist = true
-        }
+        songAdapter = SongLiteAdapter(this)
+
 
         songAdapter.differ.submitList(playlist.songs)
 

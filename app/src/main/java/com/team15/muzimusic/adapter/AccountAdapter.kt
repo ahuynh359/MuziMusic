@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import com.team15.muzimusic.R
 import com.team15.muzimusic.data.models.Account
 import com.team15.muzimusic.databinding.ItemAccountBinding
 
@@ -39,7 +40,7 @@ class AccountAdapter(val listener: ItemAccountClickListener) :
 
         holder.itemBinding.apply {
             if (account.avatar.isNotEmpty())
-                Picasso.get().load(account.avatar).fit()
+                Picasso.get().load(account.avatar).placeholder(R.drawable.ic_user).fit()
                     .into(imvAvatar)
             tvAccountName.text = account.accountName
             tvFollowers.text = "${account.totalFollowers}"

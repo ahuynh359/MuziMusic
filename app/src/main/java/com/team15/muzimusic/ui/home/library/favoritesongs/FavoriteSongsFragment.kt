@@ -36,6 +36,7 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Lay data tu API ve
         viewModel.fetchData()
     }
 
@@ -44,19 +45,17 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        // Lay view gan vao code de xu li
         binding = FragmentFavoriteSongsBinding.inflate(inflater, container, false)
         observersMenuEvent()
         return binding.root
     }
 
     private fun observersMenuEvent() {
+        // Love and unlove
         menuViewModel.actionLoveStatus.observe(viewLifecycleOwner) {
             it?.let {
-                if (it) {
-
-                } else {
-
-                }
                 Toast.makeText(context, menuViewModel.message, Toast.LENGTH_SHORT).show()
                 menuViewModel.actionLoveStatus.value = null
             }
@@ -66,12 +65,14 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Tao song adapter
         songAdapter = SongLiteAdapter(this)
         binding.recyclerSong.apply {
             adapter = songAdapter
             layoutManager = LinearLayoutManager(this@FavoriteSongsFragment.context)
         }
 
+        // Kiem tra co bai hat hoac ko co
         viewModel.favoriteSongs.observe(viewLifecycleOwner) {
             songAdapter.differ.submitList(it)
             if (it.isNotEmpty()) {
@@ -83,6 +84,8 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
             }
         }
 
+
+        // Progress bar
         viewModel.isLoading.observe(this) {
             if (it)
                 binding.pbLoading.visibility = View.VISIBLE
@@ -101,6 +104,8 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
             }
         })
 
+
+        // Xu li su kien play bai hat
         binding.btnPlayMusic.setOnClickListener {
             viewModel.favoriteSongs.value?.let {
                 if (it.isNotEmpty()) {
@@ -116,6 +121,8 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
         }
     }
 
+
+    // On Song Click
     override fun onSongClick(song: Song) {
         startActivity(Intent(context, PlayerActivity::class.java))
         Helper.sendMusicAction(
@@ -126,6 +133,8 @@ class FavoriteSongsFragment : BaseDialogFragment(), SongClickListener {
         )
     }
 
+
+    // Mo menu bai hat
     override fun onOpenMenu(song: Song, position: Int) {
         MenuBottomFragment().apply {
             arguments = Bundle().apply {
