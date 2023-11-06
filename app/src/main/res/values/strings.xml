@@ -92,6 +92,10 @@
     <string name="file_image">File Image</string>
     <string name="change_password">Change Password</string>
     <string name="confirm_new_password">Confirm New Password</string>
+    <string name="my_song">My Songs</string>
+    <string name="you_haven_t_got_any_music">You haven\'t got any music</string>
+    <string name="love_songs">Love songs</string>
+    <string name="don_t_have_any_love_songs">Don\'t have any love songs</string>
 
 
 </resources>

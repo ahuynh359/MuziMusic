@@ -23,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MySongsFragment : BaseDialogFragment(), SongClickListener {
 
-//    override val isFullHeight: Boolean = true
+
 
     private lateinit var binding: FragmentMySongsBinding
     private val viewModel by viewModels<MySongsViewModel>()
@@ -33,6 +33,7 @@ class MySongsFragment : BaseDialogFragment(), SongClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+    // Lấy dữ liêu tu API ve
         viewModel.fetchData()
     }
 
@@ -40,6 +41,7 @@ class MySongsFragment : BaseDialogFragment(), SongClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        // Găn giao dien vao de xu li
         binding = FragmentMySongsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -48,15 +50,19 @@ class MySongsFragment : BaseDialogFragment(), SongClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         songAdapter = SongLiteAdapter(this)
+
+        // Gan adapter vao list my song
         binding.recyclerSong.apply {
             adapter = songAdapter
             layoutManager = LinearLayoutManager(this@MySongsFragment.context)
         }
 
+        // Progress bar
         viewModel.isLoading.observe(this) {
             binding.pbLoading.visibility = if (it) View.VISIBLE else View.GONE
         }
 
+        // Check khi co song va ko co song nao
         viewModel.mySongs.observe(viewLifecycleOwner) {
             songAdapter.differ.submitList(it)
             if (it.isNotEmpty()) {
@@ -68,10 +74,12 @@ class MySongsFragment : BaseDialogFragment(), SongClickListener {
             }
         }
 
+        // Add song -> chuyen qua activity
         binding.btnAddSong.setOnClickListener {
             startActivity(Intent(context, FormSongActivity::class.java))
         }
 
+        // Bam vao nut play
         binding.btnPlayMusic.setOnClickListener {
             viewModel.mySongs.value?.let {
                 if (it.isNotEmpty()) {
@@ -87,6 +95,7 @@ class MySongsFragment : BaseDialogFragment(), SongClickListener {
         }
     }
 
+    //Click len music
     override fun onSongClick(song: Song) {
         startActivity(Intent(context, PlayerActivity::class.java))
         Helper.sendMusicAction(
@@ -97,6 +106,7 @@ class MySongsFragment : BaseDialogFragment(), SongClickListener {
         )
     }
 
+    // Mở menu
     override fun onOpenMenu(song: Song, position: Int) {
         MenuBottomFragment().apply {
             arguments = Bundle().apply {

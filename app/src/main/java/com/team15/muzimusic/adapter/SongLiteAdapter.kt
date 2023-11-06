@@ -15,10 +15,9 @@ import com.team15.muzimusic.databinding.ItemSongLiteBinding
 
 class SongLiteAdapter(
     private val listener: SongClickListener,
-    private val removeSongFromPlaylistListener: RemoveSongFromPlaylistListener? = null
 ) : RecyclerView.Adapter<SongLiteAdapter.SongViewHolder>() {
 
-    var showRemoveSongFromPlaylist: Boolean = false
+
 
 
     inner class SongViewHolder(val itemBinding: ItemSongLiteBinding) :
@@ -51,7 +50,7 @@ class SongLiteAdapter(
             if (song.image.isNotEmpty()) {
                 val id = song.image.split("id=")
                 Picasso.get().load(
-                        "https://drive.google.com/thumbnail?id=${id.get(1)}").fit().into(imgSongAvatar)
+                        "https://drive.google.com/thumbnail?id=${id[1]}").fit().into(imgSongAvatar)
             } else {
 
                 Picasso.get().load(R.drawable.songs).fit().into(imgSongAvatar)
@@ -59,13 +58,7 @@ class SongLiteAdapter(
             tvSongName.text = song.name
             tvAccountName.text = song.singersToString()
 
-            removeSongFromPlaylist.visibility =
-                if (showRemoveSongFromPlaylist) View.VISIBLE
-                else View.GONE
 
-            removeSongFromPlaylist.setOnClickListener {
-                removeSongFromPlaylistListener?.onRemoveSongFromPlaylist(song, position)
-            }
         }
 
         holder.itemView.setOnClickListener {

@@ -51,10 +51,12 @@ class ChartFragment : Fragment(), SongClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Lấy du lieu ve
         viewModel.fetchData()
     }
 
     override fun onResume() {
+
         super.onResume()
         binding.shimmerTopSong.startShimmer()
     }
@@ -70,6 +72,7 @@ class ChartFragment : Fragment(), SongClickListener {
     ): View {
         binding = FragmentChartBinding.inflate(layoutInflater, container, false);
 
+        // Love va unlove bai hat
         menuViewModel.actionLoveStatus.observe(viewLifecycleOwner) {
             it?.let {
                 if (it) {

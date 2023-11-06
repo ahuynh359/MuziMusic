@@ -109,11 +109,11 @@ class SongMainFragment : Fragment() {
             Log.e("vinh", "${it.loveStatus}")
             if (it.loveStatus) {
                 binding.btnHeart.apply {
-                    setImageResource(R.drawable.ic_heart)
+                    setImageResource(R.drawable.ic_hearted)
                 }
             } else {
                 binding.btnHeart.apply {
-                    setImageResource(R.drawable.ic_hearted)
+                    setImageResource(R.drawable.ic_heart)
                 }
             }
         }
